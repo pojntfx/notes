@@ -1,0 +1,72 @@
+media:
+  centers:
+    - stations:
+        - browser:
+            display:
+              individual: {}
+            control:
+              individual: {}
+      development:
+        editor: {}
+        terminal: {}
+      debugging:
+        tracer: {}
+        shell: {}
+      operations:
+        identity: {}
+        workflow: {}
+        workspace: {}
+        activity: {}
+        configuration: {}
+        dashboard: {}
+        infrastructure: {}
+        metrics: {}
+        demos: {}
+      collaboration:
+        code:
+          platforms:
+            - project:
+                chart:
+                  libraries:
+                    - {}
+                  services:
+                    - {}
+                  gateway:
+                    - {}
+                  webClient:
+                    - {}
+                  terminalClient:
+                    - {}
+                  drivers:
+                    - {}
+        forum: {}
+        chat: {}
+        site: {}
+        docs: {}
+        blog: {}
+    - overclouds:
+        - charts:
+            ingress:
+              - {}
+            deployment:
+              - {}
+            service:
+              - {}
+            volume:
+              - {}
+          undercloud:
+            storages:
+              - {}
+            domains:
+              - {}
+            routes:
+              - {}
+            nodes:
+              - runtime: {}
+                host:
+                  compute: {}
+                  communications: {}
+                  propulsion: {}
+                  rotation: {}
+                  navigation: {}
+                  energy: {}
