@@ -1,0 +1,13 @@
+/
+#articles
+articles/
+articles/2019-01-18-title
+#projects
+projects/
+projects/title
+#activities
+stories/
+story/title
+activities/
+activity/title
+imprint/
