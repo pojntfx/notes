@@ -6,7 +6,7 @@
 
 ![Felicitas Pojtinger Site Article](./assets/individual-felicitas-pojtinger-site-article.webp)
 
-Minimalist dev that loves JS and the web.
+Minimalist dev that loves JS and the web. Also known as `pojntfx`.
 
 - [Site](https://felicitas.pojtinger.com)
 - [Nextcloud](https://nextcloud.com/pojntfx)
@@ -99,7 +99,7 @@ Sleep:
 
 ![Standard Framework Site Landing](./assets/foundation-standard-framework-site-landing.webp)
 
-The Futurist's Approach to System Design.
+The Futurist's Approach to System Design. It's handle is `standardframework` which may be abbreviated as `SDFW`.
 
 - [Site](https://standardframework.io)
 - [Code](https://code.standardframework.io)
@@ -128,7 +128,7 @@ Forum: Discourse
 
 ![Alpha Horizon Site Product](./assets/corporation-alpha-horizon-site-product.webp)
 
-The Core of Tomorrow.
+The Core of Tomorrow. It's handle is `alphahorizonio` which may be abbreviated as `AHZN`.
 
 - [Site](https://alphahorizon.io)
 - [Company](https://company.alphahorizon.io)

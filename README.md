@@ -1,9 +1,11 @@
-# Felicitas Pojtinger's Projects Notes
+# Felicitas Pojtinger's Notes
+
+Notes on technology and more. If I consider them interesting enough, they will be published on my [site](https://pojtinger.tk).
 
 ## Features
 
-> Notes are ordered by year and month, see [folder structure](./src).
+- Notes, [ordered by year and month](./src).
 
 ## Docs
 
-See [Platform README](../../README.md)
+See [Platform README](../../README.md).
