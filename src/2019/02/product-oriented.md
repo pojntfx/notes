@@ -92,4 +92,8 @@ Standard Platform        Devices  Modules  Infrastructure  Operations  Developme
 (c) 2019 Felicitas Pojtinger                                                                    Imprint
 ```
 
+A simple mockup has been created to visualize this idea:
+
+![Mockup](./assets/alphahorizon-landing.webp)
+
 This way also makes it possible to do things such as full-fledged sub pages for each product. Even though we are referring to the whole as a "platform", the UNIXy-approach is still implemented, but it is much easier for beginners to go through the whole onboarding process.
