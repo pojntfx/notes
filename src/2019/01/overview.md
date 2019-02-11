@@ -1,11 +1,11 @@
 # Overview
 
 ```plaintext
-company             alphahorizon.com
+company             alphahorizon.io
     site            gatsby
     company         erpnext
     collaboration   nextcloud,collabora
-foundation          standardframework.org
+foundation          standardplatform.io
     site            gatsby
     code            gitlab
     chat            rocketchat

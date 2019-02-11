@@ -8,11 +8,11 @@ io.alphahorizon.collaboration
 ```
 
 ```plaintext
-org.s15k
-org.standardframework
-org.standardframework.code
-org.standardframework.chat
-org.standardframework.forum
+io.s14k
+io.standardplatform
+io.standardplatform.code
+io.standardplatform.chat
+io.standardplatform.forum
 ```
 
 ```plaintext
@@ -22,6 +22,6 @@ com.pojtinger
 
 ```plaintext
 alphahorizon.io
-standardframework.org
+standardplatform.io
 pojtinger.com
 ```

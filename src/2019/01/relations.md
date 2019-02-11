@@ -9,14 +9,14 @@ The Core of Tomorrow.
 - [Collaboration](https://collaboration.alphahorizon.io)
 - ...
 
-## Standard Framework
+## Standard Platform
 
 The Futurist's Approach to System Design.
 
-- [Site](https://standardframework.io)
-- [Code](https://code.standardframework.io)
-- [Chat](https://chat.standardframework.io)
-- [Forum](https://forum.standardframework.io)
+- [Site](https://standardplatform.io)
+- [Code](https://code.standardplatform.io)
+- [Chat](https://chat.standardplatform.io)
+- [Forum](https://forum.standardplatform.io)
 
 ## Felicitas Pojtinger
 

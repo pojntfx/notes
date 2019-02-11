@@ -95,16 +95,16 @@ Sleep:
   Sleeping Bag: For travels
 ```
 
-## 🌐 Foundation: Standard Framework
+## 🌐 Foundation: Standard Platform
 
-![Standard Framework Site Landing](./assets/foundation-standard-framework-site-landing.webp)
+![Standard Platform Site Landing](./assets/foundation-standard-platform-site-landing.webp)
 
-The Futurist's Approach to System Design. It's handle is `standardframework` which may be abbreviated as `SDFW`.
+The Futurist's Approach to System Design. It's handle is `standardplatform` which may be abbreviated as `SDPF`.
 
-- [Site](https://standardframework.io)
-- [Code](https://code.standardframework.io)
-- [Chat](https://chat.standardframework.io)
-- [Forum](https://forum.standardframework.io)
+- [Site](https://standardplatform.io)
+- [Code](https://code.standardplatform.io)
+- [Chat](https://chat.standardplatform.io)
+- [Forum](https://forum.standardplatform.io)
 
 ```yaml
 Site:
@@ -148,46 +148,46 @@ Company:
   Factory: ERPNext
   Strategy: ERPNext
   Operations:
-    Identity: Standard Framework
-    Workflow: Standard Framework
-    Workspace: Standard Framework
-    Activity: Standard Framework
-    Configuration: Standard Framework
-    Dashboard: Standard Framework
-    Infrastructure: Standard Framework
-    Metrics: Standard Framework
-    Demos: Standard Framework
+    Identity: Standard Platform
+    Workflow: Standard Platform
+    Workspace: Standard Platform
+    Activity: Standard Platform
+    Configuration: Standard Platform
+    Dashboard: Standard Platform
+    Infrastructure: Standard Platform
+    Metrics: Standard Platform
+    Demos: Standard Platform
     Editor: VSCodium
     Terminal: Terminal
-    Debugging: Standard Framework
-    Tracer: Standard Framework
-    Shell: Standard Framework
+    Debugging: Standard Platform
+    Tracer: Standard Platform
+    Shell: Standard Platform
 Cloud:
-  Edge: Standard Framework
+  Edge: Standard Platform
   Host:
-    Compute: Standard Framework
-    Communications: Standard Framework
-    Propulsion: Standard Framework
-    Rotation: Standard Framework
-    Navigation: Standard Framework
-    Energy: Standard Framework
-  Node: Runtime (Standard Framework)
-  Media: Standard Framework
-  Provisioner: Standard Framework
+    Compute: Standard Platform
+    Communications: Standard Platform
+    Propulsion: Standard Platform
+    Rotation: Standard Platform
+    Navigation: Standard Platform
+    Energy: Standard Platform
+  Node: Runtime (Standard Platform)
+  Media: Standard Platform
+  Provisioner: Standard Platform
   Undercloud:
-    Compute: Standard Framework
-    Storages: Standard Framework
-    Domains: Standard Framework
-    Routes: Standard Framework
+    Compute: Standard Platform
+    Storages: Standard Platform
+    Domains: Standard Platform
+    Routes: Standard Platform
   Overcloud:
-    Ingress: Standard Framework
-    Deployments: Standard Framework
-    Services: Standard Framework
-    Volumes: Standard Framework
-  Center: Standard Framework
-  Station: Standard Framework
+    Ingress: Standard Platform
+    Deployments: Standard Platform
+    Services: Standard Platform
+    Volumes: Standard Platform
+  Center: Standard Platform
+  Station: Standard Platform
 Collaboration:
-  - Standard Framework
+  - Standard Platform
   - Nextcloud
   - Collabora
 ```
