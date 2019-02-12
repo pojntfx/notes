@@ -1,6 +1,6 @@
 # Product Oriented Approach
 
-This gives the foundation a UNIXy feel but still makes it possible to refer to it as a "platform" - thus, Standard Platform should be called Standard Platform from now on. If we focus on the services (Forum, Chat, Code etc.) as much as before discoverability suffers greatly. The Standard Platform should be product-oriented, which makes the following categories more appropriate both on the site and also in other sectors (naming schemes are just ideas):
+This gives the foundation a UNIXy feel but still makes it possible to refer to it as a "platform" - thus, Standard Framework should be called Standard Platform from now on. If we focus on the services (Forum, Chat, Code etc.) as much as before discoverability suffers greatly. The Standard Platform should be product-oriented, which makes the following categories more appropriate both on the site and also in other sectors (naming schemes are just ideas):
 
 ```plaintext
 Standard Platform/
