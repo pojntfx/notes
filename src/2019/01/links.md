@@ -8,11 +8,11 @@ io.alphahorizon.collaboration
 ```
 
 ```plaintext
-io.s14k
-io.standardplatform
-io.standardplatform.code
-io.standardplatform.chat
-io.standardplatform.forum
+io.ctpf
+io.clusterplatform
+io.clusterplatform.code
+io.clusterplatform.chat
+io.clusterplatform.forum
 ```
 
 ```plaintext
@@ -22,6 +22,6 @@ com.pojtinger
 
 ```plaintext
 alphahorizon.io
-standardplatform.io
+clusterplatform.io
 pojtinger.com
 ```

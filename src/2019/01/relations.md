@@ -9,14 +9,14 @@ The Core of Tomorrow.
 - [Collaboration](https://collaboration.alphahorizon.io)
 - ...
 
-## Standard Platform
+## Cluster Platform
 
 The Futurist's Approach to System Design.
 
-- [Site](https://standardplatform.io)
-- [Code](https://code.standardplatform.io)
-- [Chat](https://chat.standardplatform.io)
-- [Forum](https://forum.standardplatform.io)
+- [Site](https://clusterplatform.io)
+- [Code](https://code.clusterplatform.io)
+- [Chat](https://chat.clusterplatform.io)
+- [Forum](https://forum.clusterplatform.io)
 
 ## Felicitas Pojtinger
 

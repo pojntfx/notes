@@ -5,7 +5,7 @@ company             alphahorizon.io
     site            gatsby
     company         erpnext
     collaboration   nextcloud,collabora
-foundation          standardplatform.io
+foundation          clusterplatform.io
     site            gatsby
     code            gitlab
     chat            rocketchat

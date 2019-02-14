@@ -95,16 +95,16 @@ Sleep:
   Sleeping Bag: For travels
 ```
 
-## 🌐 Foundation: Standard Platform
+## 🌐 Foundation: Cluster Platform
 
-![Standard Platform Site Landing](./assets/foundation-standard-platform-site-landing.webp)
+![Cluster Platform Site Landing](./assets/foundation-cluster-platform-site-landing.webp)
 
-The Futurist's Approach to System Design. It's handle is `standardplatform` which may be abbreviated as `SDPF`.
+The Futurist's Approach to System Design. It's handle is `clusterplatform` which may be abbreviated as `CTPF`.
 
-- [Site](https://standardplatform.io)
-- [Code](https://code.standardplatform.io)
-- [Chat](https://chat.standardplatform.io)
-- [Forum](https://forum.standardplatform.io)
+- [Site](https://clusterplatform.io)
+- [Code](https://code.clusterplatform.io)
+- [Chat](https://chat.clusterplatform.io)
+- [Forum](https://forum.clusterplatform.io)
 
 ```yaml
 Site:
@@ -148,46 +148,46 @@ Company:
   Factory: ERPNext
   Strategy: ERPNext
   Operations:
-    Identity: Standard Platform
-    Workflow: Standard Platform
-    Workspace: Standard Platform
-    Activity: Standard Platform
-    Configuration: Standard Platform
-    Dashboard: Standard Platform
-    Infrastructure: Standard Platform
-    Metrics: Standard Platform
-    Demos: Standard Platform
+    Identity: Cluster Platform
+    Workflow: Cluster Platform
+    Workspace: Cluster Platform
+    Activity: Cluster Platform
+    Configuration: Cluster Platform
+    Dashboard: Cluster Platform
+    Infrastructure: Cluster Platform
+    Metrics: Cluster Platform
+    Demos: Cluster Platform
     Editor: VSCodium
     Terminal: Terminal
-    Debugging: Standard Platform
-    Tracer: Standard Platform
-    Shell: Standard Platform
+    Debugging: Cluster Platform
+    Tracer: Cluster Platform
+    Shell: Cluster Platform
 Cloud:
-  Edge: Standard Platform
+  Edge: Cluster Platform
   Host:
-    Compute: Standard Platform
-    Communications: Standard Platform
-    Propulsion: Standard Platform
-    Rotation: Standard Platform
-    Navigation: Standard Platform
-    Energy: Standard Platform
-  Node: Runtime (Standard Platform)
-  Media: Standard Platform
-  Provisioner: Standard Platform
+    Compute: Cluster Platform
+    Communications: Cluster Platform
+    Propulsion: Cluster Platform
+    Rotation: Cluster Platform
+    Navigation: Cluster Platform
+    Energy: Cluster Platform
+  Node: Runtime (Cluster Platform)
+  Media: Cluster Platform
+  Provisioner: Cluster Platform
   Undercloud:
-    Compute: Standard Platform
-    Storages: Standard Platform
-    Domains: Standard Platform
-    Routes: Standard Platform
+    Compute: Cluster Platform
+    Storages: Cluster Platform
+    Domains: Cluster Platform
+    Routes: Cluster Platform
   Overcloud:
-    Ingress: Standard Platform
-    Deployments: Standard Platform
-    Services: Standard Platform
-    Volumes: Standard Platform
-  Center: Standard Platform
-  Station: Standard Platform
+    Ingress: Cluster Platform
+    Deployments: Cluster Platform
+    Services: Cluster Platform
+    Volumes: Cluster Platform
+  Center: Cluster Platform
+  Station: Cluster Platform
 Collaboration:
-  - Standard Platform
+  - Cluster Platform
   - Nextcloud
   - Collabora
 ```

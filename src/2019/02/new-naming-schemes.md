@@ -4,12 +4,12 @@
 
 ## Deutsch
 
-**Standard Platform** - Entwickeln | Verteilen | Steuern | **Diskutieren** | **Plaudern**<br/>
+**Gerätegruppen-Platform** - Entwickeln | Verteilen | Steuern | **Diskutieren** | **Plaudern**<br/>
 **Erster Horizont** - Entdecken | Arbeiten | Investieren | **Kontaktieren**
 
 ## English
 
-**Standard Platform** - Develop | Distribute | Control | **Discuss** | **Chat**<br/>
+**Cluster Platform** - Develop | Distribute | Control | **Discuss** | **Chat**<br/>
 **Alpha Horizon** - Explore | Work | Invest | **Contact**
 
 ## 中文

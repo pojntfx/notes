@@ -16,7 +16,7 @@ logo        explore    work    invest    contact
 copyright                      imprint  licenses
 ```
 
-## Collective | Standard Framwork | `standardplatform.io`
+## Collective | Cluster Platform | `clusterplatform.io`
 
 ```plaintext
 logo        about       home    blog    docs        code    forum   chat        demos    updates   search

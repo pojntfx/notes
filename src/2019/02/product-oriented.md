@@ -1,9 +1,9 @@
 # Product Oriented Approach
 
-This gives the foundation a UNIXy feel but still makes it possible to refer to it as a "platform" - thus, Standard Framework should be called Standard Platform from now on. If we focus on the services (Forum, Chat, Code etc.) as much as before discoverability suffers greatly. The Standard Platform should be product-oriented, which makes the following categories more appropriate both on the site and also in other sectors (naming schemes are just ideas):
+This gives the foundation a UNIXy feel but still makes it possible to refer to it as a "platform" - thus, Standard Framework should be called Cluster Platform from now on. If we focus on the services (Forum, Chat, Code etc.) as much as before discoverability suffers greatly. The Cluster Platform should be product-oriented, which makes the following categories more appropriate both on the site and also in other sectors (naming schemes are just ideas):
 
 ```plaintext
-Standard Platform/
+Cluster Platform/
     Landing
     Devices/
         Satellite
@@ -72,7 +72,7 @@ In addition to that, the chat, forum and GitLab should integrate tightly. Becaus
 The landing page might not be as clean as before, but it is much more usable:
 
 ```plaintext
-Standard Platform        Devices  Modules  Infrastructure  Operations  Development  [Forum]  [Chat]
+Cluster Platform        Devices  Modules  Infrastructure  Operations  Development  [Forum]  [Chat]
 
 
 
