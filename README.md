@@ -1,6 +1,6 @@
 # Felicitas Pojtinger's Notes
 
-Notes on technology and more. If I consider them interesting enough, they will be published on my [site](https://pojtinger.tk).
+Notes on technology and more. If I consider them interesting enough, they will be published on my [site](https://felicitas.pojtinger.com/).
 
 ## Features
 
