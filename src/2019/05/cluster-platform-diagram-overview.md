@@ -139,7 +139,7 @@ graph TB
         gateway_manager[batman-adv/internet service provider gateway manager]
         gateway_worker[batman-adv/internet service provider gateway worker]
         ethernet_cable[ethernet cable]
-        hardware_distributable[hand distributable with network and energy]
+        hardware_distributable[hardware distributable with network and energy]
         human_manager --> human_worker
         human_worker --> hand
         solar_manager --> solar_worker
@@ -313,7 +313,7 @@ graph TB
     subgraph step 8
         skaffold[Skaffold]
         kubectl_8[kubectl]
-        service_mesh_distributable[service mesh distributable with services]
+        service_mesh_distributable[cluster distributable in layer n with service mesh services]
         skaffold --> kubectl_8
         kubectl_8 --> service_mesh_distributable
     end

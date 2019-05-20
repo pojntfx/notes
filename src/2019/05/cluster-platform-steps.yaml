@@ -1,0 +1,87 @@
+- steps:
+    - 0
+  state: 1
+  distributables:
+    - hardware-distributable-with-network-and-energy
+  services:
+    - solar-manager
+    - solar-worker
+    - gateway-manager
+    - gateway-worker
+    - human-manager
+    - human-worker
+- steps:
+    - 1
+    - 2
+  state: 3
+  distributables:
+    - proprietary-network-distributable-in-local-scope-with-uefi-bios
+    - proprietary-media-distributable-with-uefi-bios
+    - uefi-bios-network-distributable-in-local-scope-with-ipxe
+    - uefi-bios-media-distributable-with-ipxe
+  services:
+    - ipxe-manager
+    - ipxe-worker
+    - grub-manager
+    - grub-worker
+    - syslinux-manager
+    - syslinux-worker
+    - iso-manager
+    - iso-worker
+    - uboot-manager
+    - uboot-worker
+    - rpi3-firmware-manager
+    - rpi3-firmware-worker
+    - rpi3-patch-manager
+    - rpi3-patch-worker
+    - img-manager
+    - img-worker
+    - dhcp-manager
+    - dhcp-worker
+    - dns-manager
+    - dns-worker
+    - pxe-manager
+    - pxe-worker
+    - tftp-manager
+    - tftp-worker
+    - usb-manager
+    - usb-worker
+    - human-manager
+    - human-worker
+- steps:
+    - 3
+  state: 4
+  distributables:
+    - network-distributable-in-global-scope-with-generic-gnu-linux-distro
+  services:
+    - script-repository
+    - binary-repository
+    - os-repo-mirror-manager
+    - os-repo-mirror-worker
+    - ssh-key-manager
+    - ssh-key-worker
+    - registry
+- steps:
+    - 4
+    - 5
+  state: 6
+  distributables:
+    - remote-shell-distributable-with-zerotier-vpn
+    - remote-shell-distributable-with-k3s-kubernetes-distro
+  services:
+    - remote-shell-distributable-manager
+    - remote-shell-distributable-worker
+    - overlay-network-manager
+    - overlay-network-worker
+- steps:
+    - 6
+    - 7
+    - 8
+  state: 9
+  distributables:
+    - cluster-distributable-in-layer-1-with-kubevirt
+    - cluster-distributable-in-layer-n-with-service-mesh-dependencies
+    - cluster-distributable-in-layer-n-with-service-mesh-services
+  services:
+    - cluster-distributable-manager
+    - cluster-distributable-worker
