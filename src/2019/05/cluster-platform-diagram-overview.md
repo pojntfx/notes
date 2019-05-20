@@ -1,4 +1,4 @@
-# Single Diagram Cluster Platform
+# Cluster Platform Diagram Overview
 
 > This is the hyper-imperative version that gives you as much control as possible. Feel free to implement your own architecture.
 
