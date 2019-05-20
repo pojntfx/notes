@@ -4,99 +4,99 @@
 
 ```mermaid
 graph TB
-    subgraph Stage 9
-        svc1
-        svc2
-        svc3
+    subgraph state 9
+        service_1[service 1]
+        service_2[service 2]
+        service_3[service 3]
     end
-    subgraph Stage 8
-        nats
-        minio
-        verdaccio
+    subgraph state 8
+        nats[NATS]
+        minio[MinIO]
+        verdaccio[Verdaccio]
     end
-    subgraph Stage 7
-        kmcn[kube-master-components]
-        kncn[kube-node-components]
-        nested[... n * system from below]
-        KubeVirt
+    subgraph state 7
+        kubernetes_master_components_n[Kubernetes master components in layer n]
+        kubernetes_node_components_n[Kubernetes node components in layer n]
+        nested_stage_6[... n * stage 6]
+        kubevirt[KubeVirt]
     end
-    subgraph Stage 6
-        kmc[kube-master-components]
-        knc[kube-node-components]
+    subgraph state 6
+        kubernetes_master_components_1[Kubernetes master components in layer 1]
+        kubernetes_node_components_1[Kubernetes node components in layer 1]
         containerd
-        Kube-router
+        kube_router[Kube-router]
         rook
         k3s
     end
-    subgraph Stage 5
-        ZeroTier
+    subgraph state 5
+        zerotier[ZeroTier]
     end
-    subgraph Stage 4
-        NetworkManager
+    subgraph state 4
+        network_manager[NetworkManager]
         wpa_supplicant
-        SWUpdate
-        Dropbear
-        busybox
-        ca-certificates
+        sw_update[SWUpdate]
+        dropbear[Dropbear]
+        busybox[BusyBox]
+        ca_certificates[ca-certificates]
         systemd
-        linux[Linux,SELinux]
+        linux_selinux[Linux and SELinux]
     end
-    subgraph Stage 3
-        iPXE
+    subgraph state 3
+        ipxe[iPXE]
     end
-    subgraph Stage 2
-        uefi[UEFI/BIOS]
+    subgraph state 2
+        uefi_bios[UEFI/BIOS]
     end
-    subgraph Stage 1
-        pro[proprietary UEFI/proprietary BIOS/proprietary Bootloader]
-        USB
-        NET
-        PWR
+    subgraph state 1
+        proprietary_uefi_bios_bootloader[proprietary UEFI/proprietary BIOS/proprietary bootloader]
+        usb[USB]
+        network[network]
+        energy[energy]
     end
-    subgraph Stage 0
-        usbprovider[USB Provider]
-        pwrprovider[PWR Provider]
-        netprovider[NET Provider]
+    subgraph state 0
+        usbprovider[USB provider]
+        pwrprovider[energy provider]
+        netprovider[network provider]
     end
-    svc1 --- nats
-    svc2 --- nats
-    svc3 --- nats
-    svc1 --- verdaccio
-    svc2 --- verdaccio
-    svc3 --- verdaccio
-    svc3 --- minio
-    nats --- kmcn
-    minio --- kmcn
-    verdaccio --- kmcn
-    kmcn --- kncn
-    kncn --- nested
-    nested --- KubeVirt
-    KubeVirt --- kmc
-    kmc --- knc
-    knc --- containerd
-    knc --- Kube-router
-    knc --- rook
+    service_1 --- nats
+    service_2 --- nats
+    service_3 --- nats
+    service_1 --- verdaccio
+    service_2 --- verdaccio
+    service_3 --- verdaccio
+    service_3 --- minio
+    nats --- kubernetes_master_components_n
+    minio --- kubernetes_master_components_n
+    verdaccio --- kubernetes_master_components_n
+    kubernetes_master_components_n --- kubernetes_node_components_n
+    kubernetes_node_components_n --- nested_stage_6
+    nested_stage_6 --- kubevirt
+    kubevirt --- kubernetes_master_components_1
+    kubernetes_master_components_1 --- kubernetes_node_components_1
+    kubernetes_node_components_1 --- containerd
+    kubernetes_node_components_1 --- kube_router
+    kubernetes_node_components_1 --- rook
     containerd --- k3s
-    Kube-router --- k3s
+    kube_router --- k3s
     rook --- k3s
-    NetworkManager --- systemd
+    network_manager --- systemd
     wpa_supplicant --- systemd
-    SWUpdate --- systemd
-    Dropbear --- systemd
-    ZeroTier --- systemd
+    sw_update --- systemd
+    dropbear --- systemd
+    zerotier --- systemd
     k3s --- systemd
     busybox --- systemd
-    ca-certificates --- systemd
-    systemd --- linux
-    linux --- iPXE
-    iPXE --- uefi
-    uefi --- pro
-    pro --- USB
-    pro --- NET
-    pro --- PWR
-    USB --- usbprovider
-    NET --- netprovider
-    PWR --- pwrprovider
+    ca_certificates --- systemd
+    systemd --- linux_selinux
+    linux_selinux --- ipxe
+    ipxe --- uefi_bios
+    uefi_bios --- proprietary_uefi_bios_bootloader
+    proprietary_uefi_bios_bootloader --- usb
+    proprietary_uefi_bios_bootloader --- network
+    proprietary_uefi_bios_bootloader --- energy
+    usb --- usbprovider
+    network --- netprovider
+    energy --- pwrprovider
 ```
 
 ## Steps
@@ -105,276 +105,201 @@ graph TB
 
 ```mermaid
 graph TB
-    state0[State 0]
-    subgraph Step 0
-        humanmanager[Human manager]
-        humanworker[Human worker]
-        hand[Hand]
-        handdistributable[Hand distributable with USB,NET,PWR]
-        humanmanager --> humanworker
-        humanworker --> hand
-        hand --> handdistributable
+    state_0[state 0]
+    subgraph step 0
+        human_manager[human manager]
+        human_worker[human worker]
+        hand[hand]
+        solar_manager[solar manager]
+        solar_worker[solar worker]
+        energy_cable[energy cable]
+        gateway_manager[batman-adv/internet service provider gateway manager]
+        gateway_worker[batman-adv/internet service provider gateway worker]
+        ethernet_cable[ethernet cable]
+        hardware_distributable[hand distributable with network and energy]
+        human_manager --> human_worker
+        human_worker --> hand
+        solar_manager --> solar_worker
+        solar_worker --> energy_cable
+        gateway_manager --> gateway_worker
+        gateway_worker --> ethernet_cable
+        ethernet_cable --> hand
+        energy_cable --> hand
+        hand --> hardware_distributable
     end
-    handdistributable --> state0
-    state1[State 1]
-    state0 --> state1
-    subgraph Step 1
-        dhcpmanager[DHCP manager]
-        dhcpworker[DHCP worker]
+    hardware_distributable --> state_0
+    state_1[state 1]
+    state_0 --> state_1
+    subgraph step 1
+        dhcp_manager[DHCP manager]
+        dhcp_worker[DHCP worker]
         dhcp[DHCP]
-        dnsmanager[DNS manager]
-        dnsworker[DNS worker]
+        dns_manager[DNS manager]
+        dns_worker[DNS worker]
         dns[DNS]
-        pxemanager[PXE manager]
-        pxeworker[PXE worker]
+        pxe_manager[PXE manager]
+        pxe_worker[PXE worker]
         pxe[PXE]
-        tftpmanager[TFTP manager]
-        tftpworker[TFTP worker]
+        tftp_manager[TFTP manager]
+        tftp_worker[TFTP worker]
         tftp[TFTP]
-        proprietarylocalnetworkdistributable[Proprietary network distributable in local scope with BIOS/UEFI]
-        humanmanager1[Human manager]
-        humanworker1[Human worker]
-        stick[Stick]
-        proprietarymediadistributable[Proprietary media distributable]
-        dhcpmanager --> dhcpworker
-        dhcpworker --> dhcp
-        dnsmanager --> dnsworker
-        dnsworker --> dns
+        proprietary_local_network_distributable[proprietary network distributable in local scope with UEFI/BIOS]
+        human_manager_1[human manager]
+        human_worker_1[human worker]
+        hand_1[hand]
+        usb_manager[USB manager]
+        usb_worker[USB worker]
+        stick[stick]
+        proprietary_media_distributable[proprietary media distributable with UEFI/BIOS]
+        dhcp_manager --> dhcp_worker
+        dhcp_worker --> dhcp
+        dns_manager --> dns_worker
+        dns_worker --> dns
         dhcp --> dns
-        pxemanager --> pxeworker
-        pxeworker --> pxe
+        pxe_manager --> pxe_worker
+        pxe_worker --> pxe
         dns --> pxe
-        tftpmanager --> tftpworker
-        tftpworker --> tftp
+        tftp_manager --> tftp_worker
+        tftp_worker --> tftp
         pxe --> tftp
-        tftp --> proprietarylocalnetworkdistributable
-        humanmanager1 --> humanworker1
-        humanworker1 --> stick
-        stick --> proprietarymediadistributable
+        tftp --> proprietary_local_network_distributable
+        human_manager_1 --> human_worker_1
+        human_worker_1 --> hand_1
+        usb_manager --> usb_worker
+        usb_worker --> stick
+        stick --> hand_1
+        hand_1 --> proprietary_media_distributable
     end
-    proprietarylocalnetworkdistributable --> state1
-    proprietarymediadistributable --> state1
-    state2[State 2]
-    state1 --> state2
-    subgraph Step 2
-        tftp --> uefibioslocalnetworkdistributable
-        uefibioslocalnetworkdistributable[UEFI/BIOS network distributable in local scope with iPXE]
-        uefibiosmediadistributable[UEFI/BIOS media distributable]
-        stick --> uefibiosmediadistributable
+    proprietary_local_network_distributable --> state_1
+    proprietary_media_distributable --> state_1
+    state_2[state 2]
+    state_1 --> state_2
+    subgraph step 2
+        tftp --> uefi_bios_local_network_distributable
+        uefi_bios_local_network_distributable[UEFI/BIOS network distributable in local scope with iPXE]
+        uefi_bios_media_distributable[UEFI/BIOS media distributable with iPXE]
+        hand_1 --> uefi_bios_media_distributable
     end
-    uefibioslocalnetworkdistributable --> state2
-    uefibiosmediadistributable --> state2
-    state3[State 3]
-    state2 --> state3
-    subgraph Step 3
-        scriptrepo[script repository]
-        ipxescript[iPXE script]
-        http31[HTTP]
-        kernelrepo[Kernel repository]
-        kernel[Kernel]
-        http32[HTTP]
-        initramfsrepo[Inital RAM filesystem repo]
-        initramfs[Inital RAM filesystem]
-        http33[HTTP]
-        osrepomirrorrepo[OS repo mirror repository]
-        osrepomirror[OS repo mirror]
-        http34[HTTP]
+    uefi_bios_local_network_distributable --> state_2
+    uefi_bios_media_distributable --> state_2
+    state_3[state 3]
+    state_2 --> state_3
+    subgraph step 3
+        script_repo[script repository]
+        ipxe_script[iPXE script]
+        http_3_1[HTTP]
+        kernel_repo[kernel repository]
+        kernel[kernel]
+        http_3_2[HTTP]
+        initramfs_repo[inital RAM filesystem repo]
+        initramfs[inital RAM filesystem]
+        http_3_3[HTTP]
+        os_repo_mirror_repo[OS repo mirror repository]
+        os_repo_mirror[OS repo mirror]
+        http_3_4[HTTP]
         kickstart[Kickstart]
-        http35[HTTP]
-        prescript[pre-reboot script]
-        http36[HTTP]
-        postscript[post-reboot script]
-        http37[HTTP]
-        sshkeymanager[SSH key manager]
-        sshkeyworker[SSH key worker]
-        http38[HTTP]
-        sshkey[SSH key]
-        http39[HTTP]
-        globalnetworkdistributable[network distributable in global scope with generic GNU/Linux distro]
-        scriptrepo --> ipxescript
-        ipxescript --> http31
-        http31 --> globalnetworkdistributable
-        kernelrepo --> kernel
-        kernel --> http32
-        http32 --> globalnetworkdistributable
-        initramfsrepo --> initramfs
-        initramfs --> http33
-        http33 --> globalnetworkdistributable
-        osrepomirrorrepo --> osrepomirror
-        osrepomirror --> http34
-        http34 --> globalnetworkdistributable
-        scriptrepo --> kickstart
-        kickstart --> http35
-        http35 --> globalnetworkdistributable
-        scriptrepo --> prescript
-        prescript --> http36
-        http36 --> kickstart
-        scriptrepo --> http37
-        http37 --> postscript
-        postscript --> http38
-        http38 --> kickstart
-        sshkeymanager --> sshkeyworker
-        sshkeyworker --> sshkey
-        sshkey --> http39
-        http39 --> postscript
+        http_3_5[HTTP]
+        pre_reboot_script[pre-reboot script]
+        http_3_6[HTTP]
+        post_reboot_script[post-reboot script]
+        http_3_7[HTTP]
+        ssh_key_manager[SSH key manager]
+        ssh_key_worker[SSH key worker]
+        http_3_8[HTTP]
+        ssh_key[SSH key]
+        http_3_9[HTTP]
+        global_network_distributable[network distributable in global scope with generic GNU/Linux distro]
+        script_repo --> ipxe_script
+        ipxe_script --> http_3_1
+        http_3_1 --> global_network_distributable
+        kernel_repo --> kernel
+        kernel --> http_3_2
+        http_3_2 --> global_network_distributable
+        initramfs_repo --> initramfs
+        initramfs --> http_3_3
+        http_3_3 --> global_network_distributable
+        os_repo_mirror_repo --> os_repo_mirror
+        os_repo_mirror --> http_3_4
+        http_3_4 --> global_network_distributable
+        script_repo --> kickstart
+        kickstart --> http_3_5
+        http_3_5 --> global_network_distributable
+        script_repo --> pre_reboot_script
+        pre_reboot_script --> http_3_6
+        http_3_6 --> kickstart
+        script_repo --> http_3_7
+        http_3_7 --> post_reboot_script
+        post_reboot_script --> http_3_8
+        http_3_8 --> kickstart
+        ssh_key_manager --> ssh_key_worker
+        ssh_key_worker --> ssh_key
+        ssh_key --> http_3_9
+        http_3_9 --> post_reboot_script
     end
-    globalnetworkdistributable --> state3
-    state4[State 4]
-    state3 --> state4
-    subgraph Step 4
-        sshdistributablemanager[Remote shell distributable manager]
-        localsshdistributableworker[Remote shell distributable worker in local scope]
-        ssh4[SSH]
-        localregistry[local registry]
-        sshdistributable4[remote shell distributable with ZeroTier VPN]
-        sshdistributablemanager --> localsshdistributableworker
-        localsshdistributableworker --> ssh4
-        ssh4 --> sshdistributable4
-        localregistry --> sshdistributable4
+    global_network_distributable --> state_3
+    state_4[state 4]
+    state_3 --> state_4
+    subgraph step 4
+        ssh_distributable_manager[remote shell distributable manager]
+        local_ssh_distributable_worker[remote shell distributable worker in local scope]
+        ssh_4[SSH]
+        local_registry[local registry]
+        ssh_distributable_4[remote shell distributable with ZeroTier VPN]
+        zerotier_moon[ZeroTier moon]
+        ssh_distributable_manager --> local_ssh_distributable_worker
+        local_ssh_distributable_worker --> ssh_4
+        ssh_4 --> ssh_distributable_4
+        zerotier_moon --> ssh_distributable_4
+        local_registry --> ssh_distributable_4
     end
-    sshdistributable4 --> state4
-    state5[State 5]
-    state4 --> state5
-    subgraph Step 5
-        globalsshdistributableworker[Remote shell distributable worker in global scope]
-        ssh5[SSH]
-        globalregistry[global registry]
-        sshdistributable5[remote shell distributable with k3s]
-        sshdistributablemanager --> globalsshdistributableworker
-        globalsshdistributableworker --> ssh5
-        ssh5 --> sshdistributable5
-        globalregistry --> sshdistributable5
+    ssh_distributable_4 --> state_4
+    state_5[state 5]
+    state_4 --> state_5
+    subgraph step 5
+        global_ssh_distributable_worker[remote shell distributable worker in global scope]
+        ssh_5[SSH]
+        global_registry[global registry]
+        ssh_distributable_5[remote shell distributable with k3s Kubernetes distro]
+        ssh_distributable_manager --> global_ssh_distributable_worker
+        global_ssh_distributable_worker --> ssh_5
+        ssh_5 --> ssh_distributable_5
+        global_registry --> ssh_distributable_5
     end
-    sshdistributable5 --> state5
-    state6[State 6]
-    state5 --> state6
-    subgraph Step 6
-        clusterdistributablemanager[cluster distributable manager]
-        clusterdistributableworker[cluster distributable worker]
+    ssh_distributable_5 --> state_5
+    state_6[state 6]
+    state_5 --> state_6
+    subgraph step 6
+        cluster_distributable_manager[cluster distributable manager]
+        cluster_distributable_worker[cluster distributable worker]
         kubectl[kubectl]
-        clusterdistributablelayer1[cluster distributable in layer 1 with KubeVirt]
-        clusterdistributablemanager --> clusterdistributableworker
-        clusterdistributableworker --> kubectl
-        kubectl --> clusterdistributablelayer1
+        cluster_distributable_1[cluster distributable in layer 1 with KubeVirt]
+        cluster_distributable_manager --> cluster_distributable_worker
+        cluster_distributable_worker --> kubectl
+        kubectl --> cluster_distributable_1
     end
-    clusterdistributablelayer1 --> state6
-    state7[State 7]
-    state6 --> state7
-    subgraph Step 7
-        kubectl --> clusterdistributablelayern
-        clusterdistributablelayern[cluster distributable in layer n with dependencies]
+    cluster_distributable_1 --> state_6
+    state_7[state 7]
+    state_6 --> state_7
+    subgraph step 7
+        kubectl --> cluster_distributable_n
+        cluster_distributable_n[cluster distributable in layer n with service mesh dependencies]
     end
-    clusterdistributablelayern --> state7
-    state8[State 8]
-    state7 --> state8
-    subgraph Step 8
+    cluster_distributable_n --> state_7
+    state_8[state 8]
+    state_7 --> state_8
+    subgraph step 8
         skaffold[Skaffold]
-        kubectl8[kubectl]
-        servicemeshdistributable[service mesh distributable with services]
-        skaffold --> kubectl8
-        kubectl8 --> servicemeshdistributable
+        kubectl_8[kubectl]
+        service_mesh_distributable[service mesh distributable with services]
+        skaffold --> kubectl_8
+        kubectl_8 --> service_mesh_distributable
     end
-    servicemeshdistributable --> state8
-    state9[State 9]
-    state8 --> state9
+    service_mesh_distributable --> state_8
+    state_9[state 9]
+    state_8 --> state_9
 ```
 
 ## Means
-
-### Imperative
-
-```mermaid
-graph TB
-    subgraph local
-        subgraph local energy
-            lsw[local solar worker]
-            solar[Solar]
-            lsw --- solar
-        end
-        subgraph local internet
-            lbw[local batman-adv worker]
-            lbw --- batman-adv
-            isp[Internet Service Provider]
-            lbw --- isp
-        end
-        subgraph local network
-            ldw[local dhcp worker]
-            dhcp[DHCP]
-            ldw --- dhcp
-        end
-        subgraph local bridge
-            lzw[local ztbridge worker]
-            ztbridge[ZeroTier Bridge]
-            lzw --- ztbridge
-        end
-        subgraph local domain
-            ldnsw[local dns worker]
-            dns[DNS]
-            ldnsw --- dns
-        end
-        subgraph local network distributable
-            lptw[local pxe+tftp worker]
-            pxe[PXE]
-            tftp[TFTP]
-            lptw --- pxe
-            lptw --- tftp
-        end
-        subgraph local disk distributable
-            luw[local usb worker]
-            usb[USB]
-            luw --- usb
-        end
-        subgraph local node
-            lrw[local registry worker]
-            lrw --- registry
-        end
-        subgraph local node distributable
-            lssw[local SSH worker]
-            ssh[SSH]
-            lssw --- ssh
-        end
-    end
-    subgraph global
-        subgraph global switch
-            gzw[global ztcontroller worker]
-            ztcontroller[ZeroTier Controller]
-            gzw --- ztcontroller
-        end
-        subgraph global network
-            gnw[global ztapi worker]
-            ztapi[ZeroTier API]
-            gnw --- ztapi
-        end
-        subgraph global domain
-            gdw[global dns worker]
-            dns2[DNS]
-            gdw --- dns2
-        end
-        subgraph global node
-            gnow[global registry worker]
-            registry2[registry]
-            gnow --- registry2
-        end
-        subgraph global node distributable
-            gsshw[global SSH worker]
-            ssh2[SSH]
-            gsshw --- ssh2
-        end
-    end
-    subgraph meta
-        subgraph cluster
-            gndm[global node distributable manager]
-            gndm --- manager
-        end
-        subgraph namespace
-            nw[namespace worker]
-            manager2[manager]
-            nw --- manager2
-        end
-    end
-```
-
-### Declarative
 
 ```mermaid
 graph LR
