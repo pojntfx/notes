@@ -1,15 +1,19 @@
 # Cluster Platform New Architecture Overview
 
+Note: No S3 buckets, databases, network interfaces etc. are shown because they are to be set by the client as a parameter or an environment variable!
+
+## Builders
+
 ```mermaid
 graph LR
     subgraph Builders
         client
 
         subgraph Interfaces
-            ipxe-builder-interface
-            grub-builder-interface
-            syslinux-builder-interface
-            key-builder-interface
+            ipxe-builder-interface[ipxes]
+            grub-builder-interface[grubs]
+            syslinux-builder-interface[syslinuxes]
+            key-builder-interface[key]
         end
 
         subgraph Managers
@@ -43,15 +47,17 @@ graph LR
     end
 ```
 
+## Packagers
+
 ```mermaid
 graph LR
     subgraph Packagers
         client
 
         subgraph Interfaces
-            iso-packager-interface
-            img-packager-interface
-            pxe-packager-interface
+            iso-packager-interface[isos]
+            img-packager-interface[imgs]
+            pxe-packager-interface[pxes]
         end
 
         subgraph Managers
@@ -81,20 +87,22 @@ graph LR
     end
 ```
 
+## Deployers
+
 ```mermaid
 graph LR
     subgraph Deployers
         client
 
         subgraph Interfaces
-            dhcp-deployer-interface
-            dns-deployer-interface
-            usb-deployer-interface
-            sd-deployer-interface
-            tftp-deployer-interface
-            ssh-deployer-interface
-            pnc-deployer-interface
-            wlc-deployer-interface
+            dhcp-deployer-interface[dhcp-deployment]
+            dns-deployer-interface[dns-deployment]
+            usb-deployer-interface[usb-deployments]
+            sd-deployer-interface[sd-deployments]
+            tftp-deployer-interface[tftp-deployment]
+            ssh-deployer-interface[ssh-deployments]
+            pnc-deployer-interface[pnc-deployments]
+            wlc-deployer-interface[wlc-deployments]
         end
 
         subgraph Managers
@@ -148,14 +156,16 @@ graph LR
     end
 ```
 
+## Registries
+
 ```mermaid
 graph LR
     subgraph Registries
         client
 
         subgraph Interfaces
-            script-registry-interface
-            key-registry-interface
+            script-registry-interface[scripts]
+            key-registry-interface[keys]
         end
 
         subgraph Managers
