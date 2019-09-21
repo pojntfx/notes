@@ -64,5 +64,9 @@ meshes:
         - WLC deployments # /wlc-deployments(params, privateKey)/:id (deployment) # Is also a registry like the builder managers
   - name: registries
     services:
-      - Scripts registry # /scrips(params, content)/:id (script)
-      - Key registry # /keys(params, publicKey)/:id (key)
+      managers:
+        - Script registry # script-manager.create(params, content) (id)
+        - Key registry # key-manager.create(params, content) (id)
+      interfaces:
+        - Scripts # /scrips(params, content)/:id (script)
+        - Keys # /keys(params, publicKey)/:id (key)
