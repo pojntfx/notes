@@ -1,0 +1,68 @@
+# The only way in which the meshes need to be connected is by S3 bucket access.
+# Every mesh has it's own API endpoint.
+# The different meshes are connected by a frontend.
+# Internally most services are based on a manager-worker-architecture.
+# A new mesh is defined at every point at which there is a dependency.
+# For example, the datacenter should only have a dependencies on the packages, so the PXE packager exists.
+# If there would be a dependency on the builders, that mesh would have to be up all the time.
+meshes:
+  - name: builders # binaries.ctpf.pojtinger.spcae
+    services:
+      workers: # Stateless, create and upload/return artifacts
+        - iPXE builder # ipxe-builder-worker.create(params, bucket) (status, url)
+        - GRUB builder # grub-builder-worker.create(params, bucket) (status, url)
+        - SYSLINUX builder # syslinux-builder-worker.create(params, bucket) (status, url)
+        - Key builder # key-builder-worker.create(params) (publicKey, privateKey)
+      managers: # Stateful, instruct a worker to create artifact, tracks their status and registers them
+        - iPXE builder # ipxe-builder-manager.create(params, bucket) (id)
+        - GRUB builder # grub-builder-manager.create(params, bucket) (id)
+        - SYSLINUX builder # syslinux-builder-manager.create(params, bucket) (id)
+      interfaces:
+        - iPXEs # /ipxes(params, bucket)/:id (url)
+        - GRUBs # /grubs(params, bucket)/:id (url)
+        - SYSLINUXes # /syslinuxes(params, bucket)/:id (url)
+        - Key # /key?params (publicKey, privateKey)
+  - name: packagers # packages.ctpf.pojtinger.space
+    services:
+      workers:
+        - ISO packager # iso-packager-worker.create(params, bucket) (status, url)
+        - IMG packager # img-packager-worker.create(params, bucket) (status, url)
+        - PXE packager # pxe-packager-worker.create(params, bucket) (status, url)
+      managers:
+        - ISO packager # iso-packager-manager.create(params, bucket) (job)
+        - IMG packager # img-packager-manager.create(params, bucket) (job)
+        - PXE packager # img-packager-manager.create(params, bucket) (job)
+      interfaces:
+        - ISOs # /isos(params, bucket)/:id (url.iso)
+        - IMGs # /imgs(params, bucket)/:id (url.img)
+        - PXEs # /pxes(params, bucket)/:id (url.zip)
+  - name: deployers # One per datacenter
+    services:
+      workers:
+        - DHCP server # dhcp-server-worker.create(params)
+        - DNS server # dns-server-worker.create(params)
+        - USB flasher # usb-flasher-worker.create(params, url.iso)
+        - SD flasher # sd-flasher-worker.create(params, url.img)
+        - TFTP server # tftp-server-worker.create(params, url.zip)
+        - SSH distributor # ssh-distributor-worker.create(params, privateKey)
+        - PNC distributor # pnc-distributor-worker.create(params, privateKey)
+        - WLC distributor # wlc-distributor-worker.create(params, privateKey)
+      managers:
+        - USB flasher # usb-flasher-manager.create(params) (job)
+        - SD flasher # sd-flasher-manager.create(params) (job)
+        - SSH distributor # ssh-distributor-manager.create(params) (job)
+        - PNC distributor # pnc-distributor-manager.create(params) (job)
+        - WLC distributor # wlc-distributor-manager.create(params) (job)
+      interfaces: # These can also be used as muli-tenant with the tagging system
+        - DHCP deployment # /dhcp-server(params)/:mac-address (true|lease) # Is also a registry like the `infractl get privatenetworkclusternodes -t 2` action
+        - DNS deployment # /dns-server(params)/:domain (true|domain) # Is also a registry
+        - USB deployments # /usb-deployments(params, url.iso)/:id (job)
+        - SD deployments # /sd-deployments(params, url.img)/:id (job)
+        - TFTP deployment # /tftp-deployment(params, url.zip) (true)
+        - SSH deployments # /ssh-deployments(params, privateKey)/:id (deployment) # Is also a registry like the builder managers
+        - PNC deployments # /pcn-deployments(params, privateKey)/:id (deployment) # Is also a registry like the builder managers
+        - WLC deployments # /wlc-deployments(params, privateKey)/:id (deployment) # Is also a registry like the builder managers
+  - name: registries
+    services:
+      - Scripts registry # /scrips(params, content)/:id (script)
+      - Key registry # /keys(params, publicKey)/:id (key)
